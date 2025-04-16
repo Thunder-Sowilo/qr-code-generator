@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Reader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>QR Code Reader</h1>
+    <p class="subtitle">สแกน QR Code จากรูปภาพหรือกล้องของคุณ เพื่อเข้าถึงลิงก์ได้ทันที</p>
+
+    <input type="file" id="file-input" accept="image/*" hidden />
+    <label for="file-input" class="btn">📁 เลือกรูปภาพ</label>
+
+    <div id="drop-zone">
+      <p>หรือวางรูป QR ที่นี่</p>
+    </div>
+
+    <button id="camera-btn" class="btn">📷 เปิดกล้อง</button>
+    <video id="video" autoplay></video>
+    <canvas id="camera-canvas"></canvas>
+
+    <div id="result" class="hidden">
+      <p><strong>URL ที่พบ:</strong></p>
+      <input type="text" id="url-output" readonly />
+      <div class="button-group">
+        <button id="copy-btn" class="btn small">📋 คัดลอก</button>
+        <button id="open-btn" class="btn small">🌐 เปิด URL</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
